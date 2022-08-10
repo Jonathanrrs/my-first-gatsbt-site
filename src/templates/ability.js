@@ -8,7 +8,7 @@ const ability = ({ pageContext: { pokemon, ability } }) => (
   <div style={{ width: 960, margin: "4rem auto" }}>
     <h1>
       {pokemon.name}
-      ’s {getName(ability)} ability prueba
+      {getName(ability)} ability prueba
     </h1>
     <img src={pokemon.sprites.front_default} alt={pokemon.name} />
     <p>{ability.effect_entries[0].effect}</p>
