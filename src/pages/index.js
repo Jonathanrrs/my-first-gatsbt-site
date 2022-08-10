@@ -16,3 +16,4 @@ const IndexPage = () => {
 
 /* It's important make this way because otherwise it will not working */
 export default IndexPage;
+export const Head = () => <title>Hello World</title>

@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 
 const BlogPage = ({ data }) => {
   return (
-    <Layout pageTitle="My Blog Posts">
+    <Layout>
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
           <h2>
@@ -46,3 +46,5 @@ export const query = graphql`
 `;
 
 export default BlogPage;
+
+export const Head = () => <title>Hello World</title>
