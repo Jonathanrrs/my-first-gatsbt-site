@@ -22,7 +22,7 @@ const Poke = ({ serverData }) => {
       <Helmet>
       <title>Pokemon</title>
       <meta name="description" content={serverData.name} />
-      <meta property="og:image" content="./Background.png" />
+      <meta property="og:image" content="https://myfirstgatsbysitemaster63551.gatsbyjs.io/Background.png" />
       </Helmet>
       <h1>Welcome</h1>
       <h1>{serverData.name}</h1>
