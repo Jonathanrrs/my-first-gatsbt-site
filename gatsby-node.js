@@ -19,8 +19,8 @@ const getPokemonData = names =>
   );
 
 exports.createPages = async ({ actions: { createPage } }) => {
-  const allPokemon = await getPokemonData(['pikachu', 'charizard', 'squirtle']);
-
+  const allPokemon = await getPokemonData(['pikachu', 'charizard', 'squirtle', 'bulbasaur']);
+  console.log(allPokemon);
   // Create a page that lists all Pokémon.
   createPage({
     path: `/pokemon`,
