@@ -22,11 +22,13 @@ const Poke = ({ serverData }) => {
       <Helmet>
       <title>Pokemon</title>
       <meta name="description" content={serverData.name} />
+      <meta property="og:image" content="./Background.png" />
       </Helmet>
       <h1>Welcome</h1>
       <h1>{serverData.name}</h1>
       <p>ID: {serverData.id}</p>
       <b>Peso: ${serverData.height}</b>
+      {/* <img src="./Background.png" alt="Background" /> */}
     </div>
   );
 };
