@@ -1,35 +1,46 @@
 import React, { useEffect, useState } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
-const Poke = () => {
-  const [pokemon, setPokemon] = useState({});
-  const getPikachu = async () => {
-    const data = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
-    const dataToJson = await data.json();
-    setPokemon({
-      name: dataToJson.name,
-      id: dataToJson.id,
-      height: dataToJson.height,
-    });
-  };
+const Poke = ({ serverData }) => {
+  // const [pokemon, setPokemon] = useState({});
+  // const getPikachu = async () => {
+  //   const data = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+  //   const dataToJson = await data.json();
+  //   setPokemon({
+  //     name: dataToJson.name,
+  //     id: dataToJson.id,
+  //     height: dataToJson.height,
+  //   });
+  // };
 
-  useEffect(() => {
-    getPikachu();
-  }, []);
-
+  // useEffect(() => {
+  //   getPikachu();
+  // }, []);
+  // console.log(serverData, "SSR");
   return (
-    <HelmetProvider>
-      <div>
-        <Helmet  prioritizeSeoTags>
-          <title>{pokemon.name}</title>
-          <meta name="description" content={pokemon.id} />
-        </Helmet>
-        <h1>{pokemon.name}</h1>
-        <p>ID: {pokemon.id}</p>
-        <b>Peso: ${pokemon.height}</b>
-      </div>
-    </HelmetProvider>
+    <div>
+      <Helmet>
+      <title>Pokemon</title>
+      <meta name="description" content={serverData.name} />
+      </Helmet>
+      <h1>Welcome</h1>
+      <h1>{serverData.name}</h1>
+      <p>ID: {serverData.id}</p>
+      <b>Peso: ${serverData.height}</b>
+    </div>
   );
 };
 
 export default Poke;
+
+export async function getServerData() {
+  try {
+    const data = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+    const dataToJson = await data.json();
+    return {
+      props: dataToJson
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}

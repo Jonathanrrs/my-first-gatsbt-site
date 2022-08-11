@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import {Helmet} from "react-helmet";
 
 const allPokemon = ({ pageContext: { allPokemon } }) => (
   <div style={{ width: 960, margin: '4rem auto' }}>
