@@ -20,7 +20,7 @@ const Poke = () => {
   return (
     <HelmetProvider>
       <div>
-        <Helmet>
+        <Helmet  prioritizeSeoTags>
           <title>{pokemon.name}</title>
           <meta name="description" content={pokemon.id} />
         </Helmet>
