@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Poke = () => {
   const [pokemon, setPokemon] = useState({});
@@ -18,15 +18,17 @@ const Poke = () => {
   }, []);
 
   return (
-    <div>
-      <Helmet>
-        <title>{pokemon.name}</title>
-        <meta name="description" content={pokemon.id} />
-      </Helmet>
-      <h1>{pokemon.name}</h1>
-      <p>ID: {pokemon.id}</p>
-      <b>Peso: ${pokemon.height}</b>
-    </div>
+    <HelmetProvider>
+      <div>
+        <Helmet>
+          <title>{pokemon.name}</title>
+          <meta name="description" content={pokemon.id} />
+        </Helmet>
+        <h1>{pokemon.name}</h1>
+        <p>ID: {pokemon.id}</p>
+        <b>Peso: ${pokemon.height}</b>
+      </div>
+    </HelmetProvider>
   );
 };
 
