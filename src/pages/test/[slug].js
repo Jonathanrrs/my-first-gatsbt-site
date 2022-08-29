@@ -10,7 +10,7 @@ const Test = ({ serverData }) => {
         <meta name="description" content={serverData.id} />
         <meta
           property="og:image"
-          content="https://myfirstgatsbysitemaster63551.gatsbyjs.io/Background.png"
+          content="https://elaborate-sorbet-a7b9bf.netlify.app/Background.png"
         />
       </Helmet>
       <p>{serverData.name}</p>
