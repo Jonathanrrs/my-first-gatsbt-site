@@ -1,16 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const Test = ({ serverData }) => {
+const Spiderman = ({ serverData }) => {
   console.log(serverData);
   return (
     <div>
       <Helmet>
         <title>{serverData.name}</title>
         <meta name="description" content={serverData.id} />
+        <meta property="og:title" content={serverData.name} />
         <meta
           property="og:image"
-          content="https://myfirstgatsbysitemaster63551.gatsbyjs.io/Background.png"
+          content="https://elaborate-sorbet-a7b9bf.netlify.app/Background4.png"
         />
       </Helmet>
       <p>{serverData.name}</p>
@@ -19,7 +20,7 @@ const Test = ({ serverData }) => {
   );
 };
 
-export default Test;
+export default Spiderman;
 
 export async function getServerData(context) {
   // console.log(context);
